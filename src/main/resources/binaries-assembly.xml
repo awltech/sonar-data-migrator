@@ -1,0 +1,58 @@
+<!--
+
+    Sonar Data Migrator, A tool to migrate sonar project data between to separate sonar instances.
+
+    Copyright (C) 2013 Worldline or third-party contributors as
+    indicated by the @author tags or express copyright attribution
+    statements applied by the authors.
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, see <http://www.gnu.org/licenses/>
+
+-->
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+  <id>binaries</id>
+  <formats>
+    <format>zip</format>
+  </formats>  
+  <includeBaseDirectory>false</includeBaseDirectory>
+  <dependencySets>
+    <dependencySet>
+      <outputDirectory>/</outputDirectory>      
+      <useProjectArtifact>true</useProjectArtifact>
+      <unpack>false</unpack>
+      <scope>runtime</scope>      
+    </dependencySet>
+  </dependencySets>
+  <fileSets>
+  		<fileSet>
+			<directory></directory>
+			<includes><include>README.md</include> </includes>
+			<outputDirectory>/</outputDirectory>                  
+		</fileSet>
+		<fileSet>
+			<directory>src/main/config</directory>
+			<outputDirectory>/</outputDirectory>                  
+		</fileSet>
+		<fileSet>
+			<directory>src/main/sql</directory>
+			<outputDirectory>/</outputDirectory>                
+		</fileSet>
+		<fileSet>
+			<directory>src/main/shell</directory>
+			<outputDirectory>/</outputDirectory>                
+		</fileSet>
+	</fileSets>
+</assembly>
