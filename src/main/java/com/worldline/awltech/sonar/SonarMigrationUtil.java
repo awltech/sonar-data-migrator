@@ -18,7 +18,7 @@
  * You should have received a copy of the GNU Lesser General Public
  * License along with this library; if not, see <http://www.gnu.org/licenses/>
  */
-package net.atos.tes.sonar;
+package com.worldline.awltech.sonar;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -130,7 +130,7 @@ public class SonarMigrationUtil {
 
 	private static void printUsage()
 	{
-		System.out.println("Usage: java -classpath .;sonar-db-migration-<version>.jar net.atos.tes.sonar.SonarMigrationUtil <migration Type either users/data> <project key>");
+		System.out.println("Usage: java -classpath .;sonar-db-migration-<version>.jar com.worldline.awltech.sonar.SonarMigrationUtil <migration Type either users/data> <project key>");
 		System.out.println("OR");
 		System.out.println("Usage: ./script.sh <migration Type either users/data> <project key>");
 	}

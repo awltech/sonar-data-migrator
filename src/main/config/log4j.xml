@@ -55,7 +55,7 @@
 		</layout> 
 	</appender>
 
-<category name="net.atos.tes.sonar" additivity="true">
+<category name="com.worldline.awltech.sonar" additivity="true">
 		<priority value="debug"/>
 		<appender-ref ref="CONSOLE"/>
 		<appender-ref ref="FILE"/>		
