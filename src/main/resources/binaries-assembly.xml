@@ -39,7 +39,7 @@
   <fileSets>
   		<fileSet>
 			<directory></directory>
-			<includes><include>README.md</include> </includes>
+			<includes><include>README.md</include></includes>
 			<outputDirectory>/</outputDirectory>                  
 		</fileSet>
 		<fileSet>
@@ -51,8 +51,12 @@
 			<outputDirectory>/</outputDirectory>                
 		</fileSet>
 		<fileSet>
-			<directory>src/main/shell</directory>
-			<outputDirectory>/</outputDirectory>                
-		</fileSet>
+			<directory>${project.basedir}/target/classes/</directory>
+			<includes>
+				<include>script.bat</include>
+				<include>script.sh</include>
+			</includes>
+			<outputDirectory>/</outputDirectory>                  
+		</fileSet>		
 	</fileSets>
 </assembly>
