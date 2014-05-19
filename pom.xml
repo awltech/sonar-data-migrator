@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>net.atos.tes.tools</groupId>
+	<groupId>com.worldline.awltech.sonar</groupId>
 	<artifactId>sonar-data-migrator</artifactId>
-	<version>1.0.6</version>
+	<version>1.0.0</version>
 	<name>Sonar Data Migration Utility</name>
 	<organization>
 		<name>Worldline</name>
@@ -52,6 +52,13 @@
 		</dependency>
 	</dependencies>
 	<build>
+		<resources>
+			<resource>
+				<directory>src/main/shell</directory>				
+				<filtering>true</filtering>	
+				<targetPath>${project.basedir}/target/classes/</targetPath>			
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -67,11 +74,12 @@
 				<version>2.4</version>
 				<configuration>
 					<excludes>
-						<exclude>binaries-assembly.xml</exclude>
+						<exclude>script.bat</exclude>
+						<exclude>script.sh</exclude>
 					</excludes>
 					<archive>
 						<manifest>
-							<!-- <mainClass>net.atos.tes.sonar.SonarMigrationUtil</mainClass> -->
+							<!-- <mainClass>com.worldline.awltech.sonar.SonarMigrationUtil</mainClass> -->
 							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
 							<addClasspath>true</addClasspath>
 						</manifest>
@@ -106,7 +114,7 @@
 							<goal>single</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${basedir}/target/assembly</outputDirectory>
+							<outputDirectory>${project.basedir}/target/assembly</outputDirectory>
 							<descriptors>
 								<descriptor>src/main/resources/binaries-assembly.xml</descriptor>
 							</descriptors>
