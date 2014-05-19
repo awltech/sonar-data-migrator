@@ -19,4 +19,4 @@
 # License along with this library; if not, see <http://www.gnu.org/licenses/>
 #
 
-java -classpath .:sonar-db-migration-1.0.6.jar net.atos.tes.sonar.SonarMigrationUtil $1 $2
+java -classpath .:${project.artifactId}-${project.version}.jar com.worldline.awltech.sonar.SonarMigrationUtil $1 $2
